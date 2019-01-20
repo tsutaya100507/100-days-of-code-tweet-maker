@@ -2,7 +2,6 @@
   <div id="app">
     <Header />
     <Form />
-    <TweetMessage />
     <Footer class="footer"/>
   </div>
 </template>
@@ -18,9 +17,6 @@ export default {
     Header,
     Form,
     Footer,
-  },
-  data () {
-    
   }
 }
 </script>
