@@ -32,6 +32,7 @@
         </label>
       </div>
       <div class="hashtag-title">#ハッシュタグ</div>
+
       <div class="hashtag-area">
         <div class="form-group hashtag">
           <input id="webukatsu" type="checkbox" value="#ウェブカツ" name="webukatsu" v-model="checkedTags"><label for="webukatsu">#ウェブカツ</label>
