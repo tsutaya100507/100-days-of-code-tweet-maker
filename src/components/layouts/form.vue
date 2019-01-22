@@ -172,6 +172,10 @@ export default {
     color: #00FF00;
   }
 
+  textarea {
+    resize: none;
+  }
+
   input:focus, textarea:focus {
     outline: none;
     border-color: #00FF00;
