@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="description">このサイトでは、#100DaysOfCodeの学習報告tweetを簡単に作ることができます。<br>学習日数、今日の学習時間、トータルの学習時間、今日学習した内容を報告しよう。<br><span>※本サイトは、@monmonta0127が個人的に作成したものであり、ウェブカツ!!とは関係ありません。</span></div>
+    <div class="description">このサイトでは、#100DaysOfCodeの学習報告tweetを簡単に作ることができます。<br>学習日数、今日の学習時間、トータルの学習時間、今日学習した内容を報告しよう。<br><span>※本サイトは、<a href="https://twitter.com/monmonta0127" target="_blank">@monmonta0127</a>が個人的に作成したものであり、ウェブカツ!!とは関係ありません。</span></div>
     <form>
       <div class="form-group">
         <label>今日で何日目？
@@ -75,7 +75,7 @@ export default {
       totalTime: '',
       content: '',
       tweetMessage: '',
-      checkedTags: ['#ウェブカツ', '#TechBaton', '#駆け出しエンジニアと繋がりたい', '#プログラミング学習'],
+      checkedTags: ['#ウェブカツ'],
       tweetUrl: '',
     }
   },
@@ -135,6 +135,15 @@ export default {
 
   .description span {
     font-size: 12px;
+  }
+
+  .description a {
+    color: rgb(43, 138, 216);
+    font-weight: bold;
+  }
+
+  .description a:hover {
+    text-decoration: none;
   }
 
   form {
