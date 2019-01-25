@@ -13,7 +13,7 @@
       <div class="form-group">
         <label>今日は何時間プログラミングした？
           <span :class="{'error-message': isRequiredError($v.todayTime)}" v-if="$v.todayTime.$dirty && !$v.todayTime.required"><img class="error-img" src="../../assets/error.svg">必須項目です</span>
-          <span :class="{'error-message': isNumericError($v.todayTime)}" v-else-if="!$v.todayTime.numeric"><img class="error-img" src="../../assets/error.svg">半角数字を入力してください</span>
+          <span :class="{'error-message': isNumericError($v.todayTime)}" v-else-if="!$v.todayTime.decimal"><img class="error-img" src="../../assets/error.svg">半角数字を入力してください</span>
           <span v-else-if="todayTime">{{ todayTime }}h</span><br>
           <input type="text" v-model.trim="todayTime" @input="$v.todayTime.$touch" :class="{error: $v.todayTime.$error }" placeholder="例：3.5">
         </label>
@@ -21,7 +21,7 @@
       <div class="form-group">
         <label>合計何時間プログラミングした？
           <span :class="{'error-message': isRequiredError($v.totalTime)}" v-if="$v.totalTime.$dirty && !$v.totalTime.required"><img class="error-img" src="../../assets/error.svg">必須項目です</span>
-          <span :class="{'error-message': isNumericError($v.totalTime)}" v-else-if="!$v.totalTime.numeric"><img class="error-img" src="../../assets/error.svg">半角数字を入力してください</span>
+          <span :class="{'error-message': isNumericError($v.totalTime)}" v-else-if="!$v.totalTime.decimal"><img class="error-img" src="../../assets/error.svg">半角数字を入力してください</span>
           <span v-else-if="totalTime">{{ totalTime }}h</span><br>
           <input type="text" v-model.trim="totalTime" @input="$v.totalTime.$touch" :class="{ error: $v.totalTime.$error }" placeholder="例：50">
         </label>
@@ -64,7 +64,7 @@
 <script>
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import { required, numeric } from 'vuelidate/lib/validators'
+import { required, numeric, decimal } from 'vuelidate/lib/validators'
 Vue.use(Vuelidate)
 
 export default {
@@ -86,11 +86,11 @@ export default {
     },
     todayTime: {
       required,
-      numeric
+      decimal
     },
     totalTime: {
       required,
-      numeric
+      decimal
     }
   },
   methods: {
